@@ -1,0 +1,1 @@
+** node_modules : 이 프로젝트 실행할 때 사용되는 dependency 파일들이 모두 들어있음 => package.json dependencies 부분(삭제하더라도 npm install 해주면 다시금 설치가 됨
