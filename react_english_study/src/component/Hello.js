@@ -8,31 +8,24 @@ export default Hello;*/
 // ex2)
 import World from "./World";
 import styles from "./Hello.module.css"
+import {useState} from "react";
 
 // JSX는 하나의 태그만 들어갈 수 있다.
 export default function Hello(){
 
-    function showName(){
-        console.log("Mike")
-    }
-    function showAge(age){
-        console.log(age)
-    }
-
-    function showText(e){
-        console.log(e.target.value)
-    }
+//    let name = "Mike"
+    const [name, setName] = useState('Mike')
+    // function changeName(){
+    //     setName(name === "Mike" ? "Jane" : "Mike";)
+    // }
 
     return (
         <>
-            <h1>Hello</h1>
-            <button onClick={showName}>Show name</button>
+            <h1>state</h1>
+            <h2 id = "name">{name}</h2>
             <button onClick={() => {
-                showAge(30)
-            }}>Show age</button>
-            <input type="text" onChange={(ev) => {
-                showText(ev)
-            }}/>
+                setName(name === "Mike" ? "Jane" : "Mike")
+            }}>Change</button>
         </>
     );
 }

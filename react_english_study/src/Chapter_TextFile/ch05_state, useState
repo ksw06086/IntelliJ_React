@@ -1,0 +1,12 @@
+/// *** state ***
+let name = "Mike" /// 이건 state가 아님
+function changeName(){
+    name = name === "Mike" ? "Jane" : "Mike";
+    document.getElementById("name").innerHTML = name; /// 그래서 새로 해당 태그를 가져와서 바꾸어주어야함
+}
+
+/// *** useState *** : 변수를 state로 바꾸어서 실시간 업데이트 되게 하기
+import {useState} from "react";
+// 배열 구조 분해 -> 배열 값 지정해주기, 생각해보면 변수 2개가 선언된 것
+const [name, setName] = useState("Mike")
+setName(newName)
