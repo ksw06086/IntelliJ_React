@@ -1,0 +1,27 @@
+// Js에서 CSS 적용법
+// *** 꼭 객체로 넣어야함 ***
+
+// 1. inline : html 태그 안에 직접 넣음
+<h1 style={
+    {
+        color: '#f00',
+        borderRight: '2px solid #000',
+        marginBottom: '30px',
+        opacity: 0.5
+    }
+}
+>Hello</h1>
+
+// 2. css file 활용
+
+// 2-1. css file 중복
+// App.css 에 box 추가, Hello.css에 .box추가, Hello.js에 Hello.css를 추가
+// ==> Hello.js가 App.js에 import되면서 .box를 가리키는 css가 App.css, Hello.css 2개가 됨
+// ==> import 시 <head></head> 태그 안에 <style></style> 형태로 들어가게 됨
+
+// 2-2. css file 중복 해결
+// Hello.module.css 파일을 생성 -> Hello.js에 import styles from "./Hello.module.css" 해줌
+// -> (<div className = "box"></div> => <div className={styles.box}></div>)
+// ㄴ 이렇게 하면 해당 js에서만 적용이 됨
+
+
