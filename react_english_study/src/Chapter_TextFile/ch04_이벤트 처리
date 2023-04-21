@@ -1,0 +1,19 @@
+// *** 이벤트 처리 ***
+// 1. 미리 함수로 만들어 놓고 전달해주기
+function showName(){
+    console.log("Mike")
+}
+<button onClick={showName}>Show name</button>
+// 2. 태그 내에 익명함수 만들어주기
+ex1)
+<button onClick={() => {
+    console.log(30)
+}}>Show age</button>
+ex2)
+<button onClick={() => {
+    showAge(30)
+}}>Show age</button>
+ex3)
+<input type="text" onChange={(e) => {
+    showText(e.target.value) // textBox Value 출력
+}}/>
