@@ -1,21 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Hello from './component/Hello';
+import Welcome from "./component/Welcome";
 
+// 이것이 하나의 컴포넌트, 컴포넌트는 항상 대문자로 시작함
+// 함수와 리턴하는 것은 JSX(javascript XML)
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>English Study</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Hello/>
+        <Hello/>
+        <Hello/>
+      <Welcome/>
     </div>
   );
 }
