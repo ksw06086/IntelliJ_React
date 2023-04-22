@@ -1,0 +1,30 @@
+// *** 더미데이터
+// db -> data.json
+{
+  "days" : [
+    {"id": 1, "day": 1},
+    {"id": 2, "day": 2},
+    {"id": 3, "day": 3}
+  ],
+  "words" : [
+    {
+      "id": 1,
+      "day": 1,
+      "eng": "book",
+      "kor": "책",
+      "isDone": false
+    },
+  ]
+}
+// import dummy from '../db/data.json'
+
+// *** map() 반복문
+{dummy.days.map(day => (
+    <li key={day.id}>Day {day.day}</li>
+))}
+==> key에 대한 이유 영상 찾아보기
+
+// *** 단어의 날짜가 1인 요소들만 출력
+const wordList = dummy.words.filter(word => (
+    word.day === 1
+))
