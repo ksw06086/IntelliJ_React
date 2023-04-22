@@ -1,0 +1,12 @@
+// 1. terminal => npm install react-router-dom 설치
+// 2. import { BrowserRouter, Route, Routes } from "react-router-dom";
+ㄴ <BrowserRouter></BrowserRouter> : 동기적인 웹페이지가 활용할 수 있게 하는 태그 가장 부모 태그
+ㄴ <Routes></Routes> : <Route>가 직속 자식이어야 함, 이 내부에서 페이지 이동이 됨
+ㄴ <Route /> : 하나의 이동할 component
+++ <Route path="/" element={<DayList/>}/> : 처음 page
+++ <Route path="/day/:day" element={<Day/>}/> : 해당페이지의 값줄 때 :props명으로 값을 보낼 수 잇음
++++ 값 받아올 때
+ㄴ import {useParams} from "react-router-dom";
+ㄴ const { day } = useParams(); // 얘가 문자임
+++ <Route path={"*"} element={<EmptyPage/>}/> : 지정한 페이지가 아닌 경로일 때 출력해줌
+ㄴ <Link to ={`/day/${day.day}`}>Day {day.day}</Link> : 해당 루트로 이동
