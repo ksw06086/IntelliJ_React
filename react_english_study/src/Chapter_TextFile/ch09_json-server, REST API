@@ -1,0 +1,14 @@
+// json-server : DB 서버 구축
+// 해당 값을 변경을 해도 dummy데이터는 변경이 안되기에 변경을 해주어야 함
+// 액션에 따라 쓰고 삭제하고 업데이트하는 것을 해볼예정
+// json-server로 Rest API 만들어볼 예정 => 공부목적, 프로토타입, 작은 프로젝트
+// 1. npm install -g json-server
+// 2. json-server --watch ./src/db/data.json --port 3001
+// -> hi나오면 끝
+
+// *** REST API
+// - uri 주소와 메소드로 CRUD 요청을 함
+// create : post
+// read : get
+// update : put
+// delete : delete
