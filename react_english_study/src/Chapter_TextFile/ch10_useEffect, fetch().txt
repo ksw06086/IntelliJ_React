@@ -1,0 +1,43 @@
+/// *** useEffect : API 호출 목적으로 사용
+// 어떤 상태값이 바뀌었을 때 동작하는 함수를 작성할 수 있음
+// 페이지가 모두 찍히고 change가 찍히게 됨
+useEffect(() => {
+    console.log("change")
+})
+
+// 의존성 배열, count가 바뀔 때만 실행됨
+useEffect(() => {
+    console.log("change")
+}, [count])
+
+/// 렌더링 완료 후 최초로 한번만 호출
+useEffect(() => {
+    console.log("change")
+}, [])
+
+// API 호출
+// fetch(API경로) : API 비동기 통신을 위해 사용, Promiss가 반환됨
+// res는 http 응답이고 실제 json은 아님 그래서 json을 사용하면 json으로 변환되고 Promiss를 반환해줌
+useEffect(() => {
+    fetch('https://localhost:3001/days')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setDays(data);
+        })
+}, [])
+
+// useEffect안에 변수를 사용했는데 그럼 변할 수 있는 값인데 한번만 실행되다보니
+// 변경되어도 반영이 안된다고 하여 경고가 나옴 그래서 아래에 day를 배열에 넣어줘서
+// 변경이 되면 반영될 수 있도록 해주어야 함
+ const [words, setWords] = useState([])
+
+useEffect(() => {
+    fetch(`http://localhost:3001/words?day=${day}`)
+        .then(res => {
+            return res.json();
+        }).then(data => {
+            setWords(data)
+        })
+}, [day])
