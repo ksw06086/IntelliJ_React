@@ -1,0 +1,5 @@
+// *** Typescript 적용
+// npm install typescript @types/node @types/react @types/react-dom @types/jest @types/react-router-dom
+
+// js 파일 -> .ts
+// jsx 파일 -> .tsx로 변경

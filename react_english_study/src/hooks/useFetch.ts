@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-export default function useFetch(url) {
+export default function useFetch(url: string) {
     const [data, setData] = useState([])
 
     // useEffect안에 변수를 사용했는데 그럼 변할 수 있는 값인데 한번만 실행되다보니

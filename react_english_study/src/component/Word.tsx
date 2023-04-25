@@ -1,6 +1,19 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
-export default function Word({word:w}) {
+// 이렇게 쓰면 비효율적임 any를 남발하면 안됨
+interface IProps { // 이걸 사용하면 안에 어떤 것들이 들어있는지 알수 있고 쓸 수 있어서 오류날 경우가 줄어든다.
+    // word: any;
+    word: IWord;
+}
+export interface IWord{
+    id: number;
+    day: string;
+    eng: string;
+    kor: string;
+    isDone: boolean;
+}
+
+export default function Word({word:w}: IProps) {
     const [isShow, setIsShow] = useState(false)
     const [word, setWord] = useState(w)
     const [isDone, setIsDone] = useState(word.isDone)
@@ -33,7 +46,10 @@ export default function Word({word:w}) {
                 method: "DELETE",
             }).then(res => {
                 if(res.ok){
-                    setWord({id:0})
+                    setWord({
+                        ...word,
+                        id:0,
+                    })
                 }
             })
         }
