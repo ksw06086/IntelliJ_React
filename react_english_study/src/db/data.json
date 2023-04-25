@@ -11,6 +11,10 @@
     {
       "id": 3,
       "day": 3
+    },
+    {
+      "day": 4,
+      "id": 4
     }
   ],
   "words": [
@@ -55,6 +59,20 @@
       "eng": "pencil",
       "kor": "연필",
       "isDone": false
+    },
+    {
+      "eng": "computer",
+      "kor": "컴퓨터",
+      "day": "1",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "eng": "coco",
+      "kor": "코코",
+      "day": "1",
+      "isDone": false,
+      "id": 8
     }
   ]
 }
