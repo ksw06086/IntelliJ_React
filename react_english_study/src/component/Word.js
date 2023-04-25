@@ -1,14 +1,46 @@
 import {useState} from "react";
 
-export default function Word({word}) {
+export default function Word({word:w}) {
     const [isShow, setIsShow] = useState(false)
+    const [word, setWord] = useState(w)
     const [isDone, setIsDone] = useState(word.isDone)
 
     function toggleShow() {
         setIsShow(!isShow)
     }
+    // isDone 상태 데이터 수정
     function toggleDone() {
-        setIsDone(!isDone)
+        fetch(`http://localhost:3001/words/${word.id}`,{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                ...word,
+                isDone: !isDone,
+            }),
+        }).then(res => {
+            if(res.ok){
+                setIsDone(!isDone)
+            }
+        })
+    }
+
+    // 삭제 기능
+    function del() {
+        if(window.confirm("삭제하시겠습니까?")){
+            fetch(`http://localhost:3001/words/${word.id}`,{
+                method: "DELETE",
+            }).then(res => {
+                if(res.ok){
+                    setWord({id:0})
+                }
+            })
+        }
+
+        if(word.id === 0){
+            return null;
+        }
     }
 
     return (

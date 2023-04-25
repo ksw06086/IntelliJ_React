@@ -1,0 +1,7 @@
+// React가 제공하는 Hook
+// useState(), useEffect() 사용해봄
+// 자신만의 Custom Hook도 만들 수 있음
+--- Hooks->useFatch.js 같이
+
+// 사용
+const days = useFetch(`http://localhost:3001/days`)
